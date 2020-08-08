@@ -32,13 +32,50 @@ button.addEventListener("click", function() {
     // Gets a random number between 0 and 2.
     // NOTE: Incldes decimals.
     // const randomNum = 2;
-    const randomNum = getRandomNumber();
+    const randomNum = getRandomNumber(colors);
     // console.log(randomNum);
 
     document.body.style.backgroundColor = colors[randomNum];
     color.textContent = colors[randomNum];
 });
 
-function getRandomNumber() {
-    return Math.floor(Math.random() * colors.length);
+// Accepts a list and returns a random index number within the list.
+function getRandomNumber(color_list) {
+    return Math.floor(Math.random() * color_list.length);
 }
+
+//----------------------
+// Randomized color-type feature
+
+// A list of colors similar to Red.
+const reds = ["Red"];
+// A list of colors similar to Blue.
+const blues = ["Blue"];
+/ A list of colors similar to Yellow.
+const yellows = ["Yellow"];
+
+const color_btns = document.querySelectorAll(".color-btn");
+
+color_btns.forEach(function(btn) {
+    btn.addEventListener("click", function(event) {
+        const btn_classes = event.currentTarget.classList;
+        if(btn_classes.contains("Red")) {
+            // NOTE: Remember to add highlighted-class to button.
+            
+            const randomNum = getRandomNumber(reds);
+            document.body.style.backgroundColor = reds[randomNum];
+        }
+        else if(btn_classes.contains("Blue")) {
+            // NOTE: Remember to add highlighted-class to button.
+            
+            const randomNum = getRandomNumber(blues);
+            document.body.style.backgroundColor = blues[randomNum];
+        }
+        else if(btn_classes.contains("Yellow")) {
+            // NOTE: Remember to add highlighted-class to button.
+            
+            const randomNum = getRandomNumber(yellows);
+            document.body.style.backgroundColor = yellows[randomNum];
+        }
+    }):
+});
