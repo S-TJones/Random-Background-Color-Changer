@@ -6,87 +6,123 @@
 
 body {
   background-color: AliceBlue;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  height: 100vh;
+  width: 100vw;
+
+  display: grid;
+  grid-template-rows: 10% auto 20px;
+  grid-template-areas:
+    "header"
+    "content"
+    "footer";
 }
 
 header {
+  grid-area: header;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 30px 10%;
+
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  padding: 10px 50px;
   background-color: rgb(85, 85, 85);
 }
 
 .logo {
   cursor: pointer;
   margin-right: auto;
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: 1px;
 }
 
-li,
-a,
-button {
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: bold;
-  font-size: 16px;
+.logo a {
+  font-size: large;
+  padding: 10px;
   color: aqua;
+  cursor: pointer;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+nav ul li {
+  margin: 0 10px;
+}
+/* nav ul li:first-child {
+  margin-left: 0;
+}
+nav ul li:last-child {
+  margin-right: 0;
+} */
+
+a {
+  color: #fff;
+  padding: 5px;
+  transition: all 0.2s;
+  background: rgb(64, 64, 255);
+  border-radius: 10px;
   text-decoration: none;
 }
 
-.nav-links {
-  list-style: none;
-}
-
-.nav-links li {
-  display: inline-block;
-  padding: 0px 20px;
-}
-
-.nav-links li a {
-  transition: all 0.3s ease 0s;
-}
-
-.nav-links li a:hover {
-  color: blue;
-}
-
-.header-btn {
-  padding: 9px 20px;
-  background-color: rgba(0, 136, 169, 1);
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: all 0.3s ease 0s;
-}
-
-.header-btn:hover {
-  background-color: rgba(0, 136, 169, 0.8);
-}
-
-main {
-  text-align: center;
+#content {
+  grid-area: content;
+  background-color: aliceblue;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .container {
-  background-color: rgb(155, 153, 153);
-  border-radius: 10px;
-  margin: 20% auto;
-  width: 500px;
-}
-
-.color-title {
+  background-color: gray;
+  border-radius: 5px;
   padding: 20px;
+  width: 250px;
+  height: auto;
+  /* margin: 50px auto; */
 }
 
 .change-btn {
-  border-radius: 10px;
-  border: 2px rgba(0, 136, 169, 0.8) solid;
-  color: rgba(0, 136, 169, 0.8);
-  padding: 5px 10px;
-  margin: 20px;
+  padding: 5px;
+  margin: 10px 5px;
+  border: 1px solid #000;
+  border-radius: 5px;
   cursor: pointer;
 }
 
-.change-btn:hover {
-  background-color: aqua;
-  border: 2px black solid;
-  color: black;
+.red {
+  background-color: red;
+  color: #fff;
+}
+
+.blue {
+  background-color: blue;
+  color: #fff;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+footer {
+  grid-area: footer;
+  width: 100%;
+  background-color: #000;
+  color: #fff;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 8px;
+  letter-spacing: 1px;
+
+  bottom: 0;
+  right: 0;
+  /* height: auto; */
+  padding: 6px;
 }
