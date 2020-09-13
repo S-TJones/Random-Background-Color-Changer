@@ -97,17 +97,17 @@ a {
   cursor: pointer;
 }
 
-.red {
+#red {
   background-color: red;
   color: #fff;
 }
 
-.blue {
+#blue {
   background-color: blue;
   color: #fff;
 }
 
-.yellow {
+#yellow {
   background-color: yellow;
 }
 

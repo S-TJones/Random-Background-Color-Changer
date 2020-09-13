@@ -174,32 +174,109 @@ function getRandomNumber(color_list) {
 // Randomized color-type feature
 
 // A list of colors similar to Red.
-const reds = ["Red"];
+const reds = [
+  "Red",
+  "lightsalmon",
+  "salmon",
+  "darksalmon",
+  "lightcoral",
+  "indianred",
+  "crimson",
+  "firebrick",
+  "darkred",
+];
 // A list of colors similar to Blue.
-const blues = ["Blue"];
+const blues = [
+  "Blue",
+  "powderblue",
+  "lightblue",
+  "lightskyblue",
+  "skyblue",
+  "deepskyblue",
+  "lightsteelblue",
+  "dodgerblue",
+  "	cornflowerblue",
+  "steelblue",
+  "royalblue",
+  "mediumblue",
+  "darkblue",
+  "navy",
+  "	midnightblue",
+  "mediumslateblue",
+  "slateblue",
+  "	darkslateblue",
+];
+const cyan = [
+  "Cyan",
+  "lightcyan",
+  "aqua",
+  "aquamarine",
+  "mediumaquamarine",
+  "paleturquoise",
+  "	turquoise",
+  "	mediumturquoise",
+  "darkturquoise",
+  "lightseagreen",
+  "cadetblue",
+  "darkcyan",
+  "teal",
+];
 // A list of colors similar to Yellow.
-const yellows = ["Yellow"];
+const yellows = [
+  "Yellow",
+  "lightyellow",
+  "lemonchiffon",
+  "lightgoldenrodyellow",
+  "papayawhip",
+  "moccasin",
+  "peachpuff",
+  "palegoldenrod",
+  "khaki",
+  "darkkhaki",
+];
 
-const color_btns = document.querySelectorAll(".color-btn");
+const red_button = document.getElementById("red");
+const blue_button = document.getElementById("blue");
+const yellow_button = document.getElementById("yellow");
 
-color_btns.forEach(function (btn) {
-  btn.addEventListener("click", function (event) {
-    const btn_classes = event.currentTarget.classList;
-    if (btn_classes.contains("Red")) {
-      // NOTE: Remember to add highlighted-class to button.
-
-      const randomNum = getRandomNumber(reds);
-      document.body.style.backgroundColor = reds[randomNum];
-    } else if (btn_classes.contains("Blue")) {
-      // NOTE: Remember to add highlighted-class to button.
-
-      const randomNum = getRandomNumber(blues);
-      document.body.style.backgroundColor = blues[randomNum];
-    } else if (btn_classes.contains("Yellow")) {
-      // NOTE: Remember to add highlighted-class to button.
-
-      const randomNum = getRandomNumber(yellows);
-      document.body.style.backgroundColor = yellows[randomNum];
-    }
-  });
+red_button.addEventListener("click", function () {
+  const randomNum = getRandomNumber(reds);
+  color.textContent = reds[randomNum];
+  document.getElementById("content").style.backgroundColor = colors[randomNum];
 });
+
+blue_button.addEventListener("click", function () {
+  const randomNum = getRandomNumber(blues);
+  color.textContent = blues[randomNum];
+  document.getElementById("content").style.backgroundColor = colors[randomNum];
+});
+
+yellow_button.addEventListener("click", function () {
+  const randomNum = getRandomNumber(yellows);
+  color.textContent = yellows[randomNum];
+  document.getElementById("content").style.backgroundColor = colors[randomNum];
+});
+
+// const color_btns = document.querySelectorAll(".color-btn");
+
+// color_btns.forEach(function (btn) {
+//   btn.addEventListener("click", function (event) {
+//     const btn_classes = event.currentTarget.classList;
+//     if (btn_classes.contains("Red")) {
+//       // NOTE: Remember to add highlighted-class to button.
+
+//       const randomNum = getRandomNumber(reds);
+//       document.body.style.backgroundColor = reds[randomNum];
+//     } else if (btn_classes.contains("Blue")) {
+//       // NOTE: Remember to add highlighted-class to button.
+
+//       const randomNum = getRandomNumber(blues);
+//       document.body.style.backgroundColor = blues[randomNum];
+//     } else if (btn_classes.contains("Yellow")) {
+//       // NOTE: Remember to add highlighted-class to button.
+
+//       const randomNum = getRandomNumber(yellows);
+//       document.body.style.backgroundColor = yellows[randomNum];
+//     }
+//   });
+// });
